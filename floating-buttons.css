@@ -1,0 +1,96 @@
+/* Floating Action Buttons */
+.floating-buttons {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.float-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+}
+
+.call-float {
+    background: linear-gradient(135deg, #0f5999 0%, #1e5c3f 100%);
+    color: white;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 12px rgba(45, 134, 89, 0.6), 0 0 0 10px rgba(45, 134, 89, 0.1);
+    }
+}
+
+/* WhatsApp Button in Header */
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4);
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-buttons {
+        right: 15px;
+        bottom: 15px;
+        gap: 12px;
+    }
+    
+    .float-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .float-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .btn-whatsapp {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+    
+    .btn-whatsapp svg {
+        width: 16px;
+        height: 16px;
+    }
+}

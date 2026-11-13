@@ -1,0 +1,381 @@
+/* EMI Calculator - Single Row Layout with Equal Spacing */
+
+.calculator-section-new {
+    padding: 60px 20px;
+    background: #ffffff;
+}
+
+.calculator-container-new {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Left Side - Calculator Form */
+.calculator-left-new {
+    background: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.calculator-header {
+    background: #3d4a5c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.calculator-form {
+    padding: 25px;
+}
+
+.calc-form-group {
+    margin-bottom: 25px;
+}
+
+.calc-form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input-with-icon {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.input-with-icon input[type="text"] {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    background: white;
+}
+
+.currency-symbol,
+.percent-symbol,
+.clock-symbol {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.tenure-input-wrapper {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.tenure-input-wrapper .input-with-icon {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.tenure-buttons {
+    display: flex;
+    gap: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tenure-btn {
+    padding: 12px 18px;
+    border: none;
+    background: #e0e0e0;
+    color: #666;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 13px;
+}
+
+.tenure-btn:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.tenure-btn:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.tenure-btn.active {
+    background: #2d6a9f;
+    color: white;
+}
+
+.tenure-btn:hover {
+    background: #3d7fb5;
+    color: white;
+}
+
+/* Range Sliders */
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #2d6a9f 0%, #2d6a9f 50%, #ddd 50%, #ddd 100%);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #2d6a9f;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #2d6a9f;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Right Side - Results and Chart in ONE ROW */
+.calculator-right-new {
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.results-column {
+    border-right: 1px solid #eee;
+}
+
+.result-item {
+    padding: 25px 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.result-item:first-child {
+    padding-top: 30px;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-label {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.result-value {
+    color: #2d6a9f;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Chart Section - Same Row */
+.chart-section {
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.pie-chart-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 25px;
+}
+
+#paymentChart {
+    width: 100%;
+    height: 100%;
+}
+
+.chart-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.legend-text {
+    flex: 1;
+    text-align: left;
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.legend-percent {
+    font-weight: 700;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1300px) {
+    .calculator-container-new {
+        grid-template-columns: 360px 1fr;
+        gap: 25px;
+    }
+    
+    .pie-chart-container {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .calculator-container-new {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .calculator-left-new {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .calculator-right-new {
+        grid-template-columns: 1fr;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .results-column {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .chart-section {
+        padding: 35px 25px;
+    }
+    
+    .pie-chart-container {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calculator-form {
+        padding: 20px;
+    }
+    
+    .result-item {
+        padding: 20px 15px;
+    }
+    
+    .result-value {
+        font-size: 24px;
+    }
+    
+    .chart-section {
+        padding: 25px 20px;
+    }
+    
+    .tenure-input-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .tenure-buttons {
+        width: 100%;
+    }
+    
+    .tenure-btn {
+        flex: 1;
+    }
+    
+    .pie-chart-container {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-header {
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    .input-with-icon input[type="text"] {
+        padding: 10px 10px 10px 35px;
+        font-size: 14px;
+    }
+    
+    .result-value {
+        font-size: 20px;
+    }
+    
+    .result-label {
+        font-size: 13px;
+    }
+    
+    .chart-title {
+        font-size: 15px;
+    }
+    
+    .pie-chart-container {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .legend-text {
+        font-size: 12px;
+    }
+    
+    .legend-percent {
+        font-size: 13px;
+    }
+}
